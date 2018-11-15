@@ -1,6 +1,6 @@
 # README #
 
-demo-node-api
+demo-next-admin
 
 ### Installation ###
 
