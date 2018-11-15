@@ -5,6 +5,7 @@ demo-next-admin
 ### Installation ###
 
 * Install dependencies
+
     ```Bash
     npm install
     ```
@@ -12,6 +13,7 @@ demo-next-admin
 ### Run the App ###
  
 * For all users, simply run:
+
     ```Bash
     npm run dev
     ```
