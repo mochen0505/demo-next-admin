@@ -29,7 +29,7 @@ demo-next-admin
 * React Intl
 * Error page
 * Redux/React Redux
-* Redux thunk
+* Redux thunk/Saga
 * Reselect
 * Recompose
 * Axios
