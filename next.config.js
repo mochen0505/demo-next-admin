@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack')
 const withLess = require('@zeit/next-less');
 const lessToJS = require('less-vars-to-js');
 const fs = require('fs');
@@ -21,5 +22,17 @@ module.exports = withLess({
         javascriptEnabled: true,
         modifyVars: themeVariables // make your antd custom effective
     },
+    webpack: (config) => {
+        config.plugins = config.plugins || [];
+        config.plugins = [
+            ...config.plugins,
+            // Read the .env file
+            new Dotenv({
+                path: path.join(__dirname, '.env'),
+                systemvars: true
+            })
+        ];
 
+        return config
+    }
 });

@@ -26,13 +26,10 @@ demo-next-admin
 
 ### TODO ###
 
-* React Intl
+* React-Intl
 * Error page
 * Redux/React Redux
-* Redux thunk/Saga
+* Redux thunk/Redux saga
 * Reselect
 * Recompose
 * Axios
-
-* nodemon
-* .env
