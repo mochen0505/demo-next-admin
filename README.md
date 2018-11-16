@@ -26,10 +26,10 @@ demo-next-admin
 
 ### TODO ###
 
-* React-Intl
-* Error page
 * Redux/React Redux
 * Redux thunk/Redux saga
 * Reselect
 * Recompose
+* React-Intl
+* Error page
 * Axios
