@@ -59,12 +59,10 @@ class LayoutWithSidebar extends React.Component {
     };
 
     componentDidMount() {
-        if (typeof localStorage !== 'undefined' && typeof navigator !== 'undefined') {
-            if ( localStorage.getItem('language') ) {
-                localStorage.getItem('language') === 'zh-CN' ? this.props.localeZH() : this.props.localeEN();
-            } else {
-                navigator.language === 'zh-CN' ? this.props.localeZH() : this.props.localeEN();
-            }
+        if ( localStorage.getItem('language') ) {
+            localStorage.getItem('language') === 'zh-CN' ? this.props.localeZH() : this.props.localeEN();
+        } else {
+            navigator.language === 'zh-CN' ? this.props.localeZH() : this.props.localeEN();
         }
     }
 
