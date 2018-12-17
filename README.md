@@ -22,7 +22,12 @@ demo-next-admin
 
 ### Deployment ###
 
-* TBD
+* To build, run:
+
+  ```Bash
+  next build
+  next start
+  ```
 
 ### TODO ###
 
