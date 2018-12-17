@@ -31,9 +31,10 @@ demo-next-admin
 
 ### TODO ###
 
-* Redux/React Redux
-* Redux thunk/Redux saga
-* Reselect
-* React-Intl
+* Prettier
+* eslint 
+* Auth
 * Axios
+* Caches
 * Immutable
+* Redux saga
