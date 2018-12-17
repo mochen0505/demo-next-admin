@@ -9,7 +9,6 @@ import { LOCALE_EN, LOCALE_ZH } from '../constants/actionTypes';
 addLocaleData([...en, ...zh]);
 
 const localeEN = () => {
-  window.localStorage.setItem('language', 'en-US');
   return {
     type: LOCALE_EN,
     locale: 'en-US',
@@ -18,7 +17,6 @@ const localeEN = () => {
 };
 
 const localeZH = () => {
-  window.localStorage.setItem('language', 'zh-CN');
   return {
     type: LOCALE_ZH,
     locale: 'zh-CN',

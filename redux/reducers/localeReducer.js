@@ -7,11 +7,13 @@ export const localeReducer = (
 ) => {
   switch (action.type) {
     case LOCALE_EN:
+      window.localStorage.setItem('language', 'en-US');
       return {
         locale: action.locale,
         msgs: action.msgs
       };
     case LOCALE_ZH:
+      window.localStorage.setItem('language', 'zh-CN');
       return {
         locale: action.locale,
         msgs: action.msgs
