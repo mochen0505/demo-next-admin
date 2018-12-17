@@ -110,7 +110,7 @@ class LayoutWithSidebar extends React.Component {
                                     <Link href={`${item.linkTo}`}>
                                         <div>
                                             <Icon type={item.icon} />
-                                            <span>{item.name}</span>
+                                            <span>{navItem[item.name]}</span>
                                         </div>
                                     </Link>
                                 </Menu.Item>
@@ -126,7 +126,7 @@ class LayoutWithSidebar extends React.Component {
                                     onClick={this.handleToggle}
                                 />
                                 <Button type="default" size="small" onClick={this.handleClick}>
-                                    中文
+                                    {this.props.locale === 'zh-CN' ? 'EN' : '中文'}
                                 </Button>
                             </div>
                             <div className="header_right">
@@ -142,10 +142,10 @@ class LayoutWithSidebar extends React.Component {
                             <Breadcrumb className="breadcrumb">
                                 {
                                     router.pathname.split('/')[1] === '' &&
-                                    <Breadcrumb.Item key='home'>home</Breadcrumb.Item>
+                                    <Breadcrumb.Item key='home'>{navItem['home']}</Breadcrumb.Item>
                                 }
                                 {router.pathname.split('/').map((str, index) => (
-                                    <Breadcrumb.Item key={index}>{str}</Breadcrumb.Item>
+                                    <Breadcrumb.Item key={index}>{navItem[str]}</Breadcrumb.Item>
                                 ))}
                             </Breadcrumb>
                             <div className="content">{this.props.children}</div>
