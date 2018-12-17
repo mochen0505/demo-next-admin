@@ -7,6 +7,7 @@ import store from '../redux/configureStore';
 import LayoutWithSidebar from '../components/LayoutWithSidebar'
 import LayoutWithoutSidebar from '../components/LayoutWithoutSidebar'
 import Layout404 from '../components/Layout404'
+import LayoutWrapper from '../components/LayoutWrapper'
 
 const configsNeedAuth = ['/', '/products', '/products/productDetails'];
 const configsNoAuth = ['/login', '/signup'];
@@ -29,24 +30,26 @@ class MyApp extends App {
         return (
             <Container>
                 <Provider store={store}>
-                    {
-                        configsNeedAuth.includes(router.pathname) &&
-                        <LayoutWithSidebar>
-                            <Component {...pageProps} />
-                        </LayoutWithSidebar>
-                    }
-                    {
-                        configsNoAuth.includes(router.pathname) &&
-                        <LayoutWithoutSidebar>
-                            <Component {...pageProps} />
-                        </LayoutWithoutSidebar>
-                    }
-                    {
-                        !configsNeedAuth.includes(router.pathname) && !configsNoAuth.includes(router.pathname) &&
-                        <Layout404>
-                            <Component {...pageProps} />
-                        </Layout404>
-                    }
+                    <LayoutWrapper>
+                        {
+                            configsNeedAuth.includes(router.pathname) &&
+                            <LayoutWithSidebar>
+                                <Component {...pageProps} />
+                            </LayoutWithSidebar>
+                        }
+                        {
+                            configsNoAuth.includes(router.pathname) &&
+                            <LayoutWithoutSidebar>
+                                <Component {...pageProps} />
+                            </LayoutWithoutSidebar>
+                        }
+                        {
+                            !configsNeedAuth.includes(router.pathname) && !configsNoAuth.includes(router.pathname) &&
+                            <Layout404>
+                                <Component {...pageProps} />
+                            </Layout404>
+                        }
+                    </LayoutWrapper>
                 </Provider>
             </Container>
         )

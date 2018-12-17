@@ -58,14 +58,6 @@ class LayoutWithSidebar extends React.Component {
         console.log('signed out')
     };
 
-    componentDidMount() {
-        if ( localStorage.getItem('language') ) {
-            localStorage.getItem('language') === 'zh-CN' ? this.props.localeZH() : this.props.localeEN();
-        } else {
-            navigator.language === 'zh-CN' ? this.props.localeZH() : this.props.localeEN();
-        }
-    }
-
     render () {
         const {router} = this.props;
         const { navItem, userMenu } = this.props.msgs;
