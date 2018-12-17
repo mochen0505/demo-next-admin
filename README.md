@@ -34,7 +34,6 @@ demo-next-admin
 * Redux/React Redux
 * Redux thunk/Redux saga
 * Reselect
-* Recompose
 * React-Intl
-* Error page
 * Axios
+* Immutable
