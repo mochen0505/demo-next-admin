@@ -7,7 +7,9 @@ import store from '../redux/configureStore';
 import LayoutWithSidebar from '../components/LayoutWithSidebar'
 import LayoutWithoutSidebar from '../components/LayoutWithoutSidebar'
 import Layout404 from '../components/Layout404'
-import LayoutWrapper from '../components/LayoutWrapper'
+import {LOCALE_EN, LOCALE_ZH} from "../redux/constants/actionTypes";
+import en_US from "../locale/en_US";
+import zh_CN from "../locale/zh_CN";
 
 const configsNeedAuth = ['/', '/products', '/products/productDetails'];
 const configsNoAuth = ['/login', '/signup'];
@@ -16,6 +18,16 @@ class MyApp extends App {
     static async getInitialProps ({Component, ctx}) {
         return {
             pageProps: (Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
+        }
+    }
+
+    async componentDidMount() {
+        if (typeof localStorage !== 'undefined' && typeof navigator !== 'undefined') {
+            if ( localStorage.getItem('language') ) {
+                localStorage.getItem('language') === 'zh-CN' ? await this.props.store.dispatch({type:LOCALE_ZH, locale: 'zh-CN', msgs: zh_CN}) : await this.props.store.dispatch({type:LOCALE_EN, locale: 'en-US', msgs: en_US});
+            } else {
+                navigator.language === 'zh-CN' ? await this.props.store.dispatch({type:LOCALE_ZH, locale: 'zh-CN', msgs: zh_CN}) : await this.props.store.dispatch({type:LOCALE_EN, locale: 'en-US', msgs: en_US});
+            }
         }
     }
 
@@ -30,26 +42,24 @@ class MyApp extends App {
         return (
             <Container>
                 <Provider store={store}>
-                    <LayoutWrapper>
-                        {
-                            configsNeedAuth.includes(router.pathname) &&
-                            <LayoutWithSidebar>
-                                <Component {...pageProps} />
-                            </LayoutWithSidebar>
-                        }
-                        {
-                            configsNoAuth.includes(router.pathname) &&
-                            <LayoutWithoutSidebar>
-                                <Component {...pageProps} />
-                            </LayoutWithoutSidebar>
-                        }
-                        {
-                            !configsNeedAuth.includes(router.pathname) && !configsNoAuth.includes(router.pathname) &&
-                            <Layout404>
-                                <Component {...pageProps} />
-                            </Layout404>
-                        }
-                    </LayoutWrapper>
+                    {
+                        configsNeedAuth.includes(router.pathname) &&
+                        <LayoutWithSidebar>
+                            <Component {...pageProps} />
+                        </LayoutWithSidebar>
+                    }
+                    {
+                        configsNoAuth.includes(router.pathname) &&
+                        <LayoutWithoutSidebar>
+                            <Component {...pageProps} />
+                        </LayoutWithoutSidebar>
+                    }
+                    {
+                        !configsNeedAuth.includes(router.pathname) && !configsNoAuth.includes(router.pathname) &&
+                        <Layout404>
+                            <Component {...pageProps} />
+                        </Layout404>
+                    }
                 </Provider>
             </Container>
         )

@@ -35,6 +35,7 @@ demo-next-admin
 * eslint 
 * Auth
 * Axios
-* Caches
+* ssr-caching
+* i18next
 * Immutable
 * Redux saga

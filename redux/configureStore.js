@@ -19,7 +19,7 @@ const composeEnhancers =
         })
         : compose;
 
-const store = () => createStore(reducer, composeEnhancers(...enhancers));
+const store = (initialState) => createStore(reducer, initialState, composeEnhancers(...enhancers));
 
 export default store;
 
