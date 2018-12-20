@@ -1,41 +1,41 @@
-# README #
+# README
 
 demo-next-admin
 
-### Installation ###
+### Installation
 
-* Install dependencies
+- Install dependencies
 
-    ```Bash
-    npm install
-    ```
+  ```Bash
+  npm install
+  ```
 
-### Run the App ###
- 
-* For all users, simply run:
+### Run the App
 
-    ```Bash
-    npm run dev
-    ```
-    
-* The App will be running on localhost:3002
+- For all users, simply run:
 
-### Deployment ###
+  ```Bash
+  npm run dev
+  ```
 
-* To build, run:
+- The App will be running on localhost:3002
+
+### Deployment
+
+- To build, run:
 
   ```Bash
   next build
   next start
   ```
 
-### TODO ###
+### TODO
 
-* Prettier
-* eslint 
-* Auth
-* Axios
-* ssr-caching
-* i18next
-* Immutable
-* Redux saga
+- Prettier
+- eslint
+- Auth
+- Axios
+- ssr-caching
+- i18next
+- Immutable
+- Redux saga

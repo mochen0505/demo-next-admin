@@ -5,21 +5,21 @@ import api from '../api/api';
 import * as localeReducers from './reducers/localeReducer';
 
 const reducer = combineReducers({
-    ...localeReducers
+  ...localeReducers
 });
 const middleware = [logger, thunk.withExtraArgument(api)];
 const enhancers = [applyMiddleware(...middleware)];
 
 const composeEnhancers =
-    process.env.NODE_ENV !== 'production' &&
-    typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-            // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-        })
-        : compose;
+  process.env.NODE_ENV !== 'production' &&
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      })
+    : compose;
 
-const store = (initialState) => createStore(reducer, initialState, composeEnhancers(...enhancers));
+const store = (initialState) =>
+  createStore(reducer, initialState, composeEnhancers(...enhancers));
 
 export default store;
-
