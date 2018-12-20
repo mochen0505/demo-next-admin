@@ -1,0 +1,14 @@
+{
+  "lngButtonText": "EN",
+  "navItem": {
+    "home": "首页",
+    "products": "产品列表",
+    "profile": "用户资料",
+    "productDetails": "产品详情",
+    "faceRecognition": "人脸检测"
+  },
+  "userMenu": {
+    "profile": "用户资料",
+    "signout": "退出"
+  }
+}

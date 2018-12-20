@@ -3,25 +3,19 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 import HeaderM from './Header'
 import { connect } from 'react-redux'
-import {
-    selectLocale,
-    selectLocaleMsgs
-} from '../redux/selector';
-import { localeEN, localeZH } from '../redux/actions/localeAction';
 import { Layout, Menu, Icon, Dropdown, Breadcrumb, Button, Avatar } from 'antd';
 import '../assets/layoutSidebar.less'
+import { i18n, withNamespaces } from '../i18n';
 
 const mapStateToProps = (state) => {
     return {
-        locale: selectLocale(state),
-        msgs: selectLocaleMsgs(state)
+
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        localeZH: () => dispatch(localeZH()),
-        localeEN: () => dispatch(localeEN())
+
     };
 };
 
@@ -47,11 +41,7 @@ class LayoutWithSidebar extends React.Component {
     };
 
     handleClick = () => {
-        if (this.props.locale === 'zh-CN') {
-            this.props.localeEN();
-        } else if (this.props.locale === 'en-US') {
-            this.props.localeZH();
-        }
+        i18n.changeLanguage(i18n.language === 'en_US' ? 'zh_CN' : 'en_US')
     };
 
     handleSignOut = () => {
@@ -60,15 +50,14 @@ class LayoutWithSidebar extends React.Component {
 
     render () {
         const {router} = this.props;
-        const { navItem, userMenu } = this.props.msgs;
         const menu = (
             <Menu className="header_menu">
                 <Menu.Item key="0">
-                    {userMenu.profile}
+                    {this.props.t('userMenu.profile')}
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item key="1" onClick={this.handleSignOut}>
-                    {userMenu.signout}
+                    {this.props.t('userMenu.signout')}
                 </Menu.Item>
             </Menu>
         );
@@ -100,7 +89,9 @@ class LayoutWithSidebar extends React.Component {
                                     <Link href={`${item.linkTo}`}>
                                         <div>
                                             <Icon type={item.icon} />
-                                            <span>{navItem[item.name]}</span>
+                                            <span>
+                                                {this.props.t(`navItem.${item.name}`)}
+                                            </span>
                                         </div>
                                     </Link>
                                 </Menu.Item>
@@ -116,7 +107,7 @@ class LayoutWithSidebar extends React.Component {
                                     onClick={this.handleToggle}
                                 />
                                 <Button type="default" size="small" onClick={this.handleClick}>
-                                    {this.props.locale === 'zh-CN' ? 'EN' : '中文'}
+                                    {this.props.t('lngButtonText')}
                                 </Button>
                             </div>
                             <div className="header_right">
@@ -132,11 +123,15 @@ class LayoutWithSidebar extends React.Component {
                             <Breadcrumb className="breadcrumb">
                                 {
                                     router.pathname.split('/')[1] === '' &&
-                                    <Breadcrumb.Item key='home'>{navItem['home']}</Breadcrumb.Item>
+                                    <Breadcrumb.Item key='home'> {this.props.t(`navItem.home`)}</Breadcrumb.Item>
                                 }
-                                {router.pathname.split('/').map((str, index) => (
-                                    <Breadcrumb.Item key={index}>{navItem[str]}</Breadcrumb.Item>
-                                ))}
+                                {
+                                    router.pathname.split('/').map((str, index) => {
+                                        if (str !== '') {
+                                            return (
+                                                <Breadcrumb.Item key={index}> {str !== '' && this.props.t(`navItem.${str}`)}</Breadcrumb.Item>
+                                            )
+                                        }})}
                             </Breadcrumb>
                             <div className="content">{this.props.children}</div>
                         </Content>
@@ -150,4 +145,4 @@ class LayoutWithSidebar extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LayoutWithSidebar))
+export default withNamespaces('layout')(connect(mapStateToProps, mapDispatchToProps)(withRouter(LayoutWithSidebar)))

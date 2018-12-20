@@ -1,5 +1,7 @@
 const express = require('express');
 const next = require('next');
+const nextI18NextMiddleware = require('next-i18next/middleware');
+const nextI18next = require('../i18n');
 
 require('dotenv').config()
 
@@ -11,6 +13,8 @@ const handle = app.getRequestHandler();
 app.prepare()
     .then(() => {
         const server = express();
+
+        nextI18NextMiddleware(nextI18next, app, server);
 
         server.get('/aaaa', (req, res) => {
             return app.render(req, res, '/a', req.query)

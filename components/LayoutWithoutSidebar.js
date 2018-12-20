@@ -1,20 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectLocale } from '../redux/selector';
-import { localeEN, localeZH } from '../redux/actions/localeAction';
 import { Layout, Button } from 'antd';
 import '../assets/layoutNoSidebar.less';
+import { i18n, withNamespaces } from "../i18n";
 
 const mapStateToProps = (state) => {
     return {
-        locale: selectLocale(state)
+
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        localeZH: () => dispatch(localeZH()),
-        localeEN: () => dispatch(localeEN())
+
     };
 };
 
@@ -22,11 +20,7 @@ const { Header, Footer, Content } = Layout;
 
 class LayoutWithoutSidebar extends React.Component {
     handleClick = () => {
-        if (this.props.locale === 'zh-CN') {
-            this.props.localeEN();
-        } else if (this.props.locale === 'en-US') {
-            this.props.localeZH();
-        }
+        i18n.changeLanguage(i18n.language === 'en_US' ? 'zh_CN' : 'en_US')
     };
 
     render() {
@@ -37,7 +31,7 @@ class LayoutWithoutSidebar extends React.Component {
                         <div className="logo" />
                     </div>
                     <Button ghost size="small" onClick={this.handleClick}>
-                        {this.props.locale === 'zh-CN' ? 'EN' : '中文'}
+                        {this.props.t('lngButtonText')}
                     </Button>
                 </Header>
                 <Content className="content_wrapper">{this.props.children}</Content>
@@ -49,7 +43,4 @@ class LayoutWithoutSidebar extends React.Component {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(LayoutWithoutSidebar);
+export default withNamespaces('layout')(connect(mapStateToProps, mapDispatchToProps)(LayoutWithoutSidebar));

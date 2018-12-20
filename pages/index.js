@@ -1,38 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectLocaleMsgs } from '../redux/selector/index';
 import { Row, Col, Card } from 'antd';
 import '../assets/index.less';
+import {withNamespaces} from "../i18n";
+import {Menu} from "antd/lib/menu";
 
 const mapStateToProps = (state) => {
     return {
-        msgs: selectLocaleMsgs(state)
+
     };
 };
 
 class Home extends React.Component {
+    static async getInitialProps() {
+        return {
+            namespacesRequired: ['home']
+        }
+    }
 
     render() {
-        const { cardInfo } = this.props.msgs;
         const dashCards = [
             {
                 svg: '../static/svgs/kiss.svg',
-                title: cardInfo.balance,
+                title: this.props.t('cardInfo.balance'),
                 data: 3456
             },
             {
                 svg: '../static/svgs/tongueout.svg',
-                title: cardInfo.products,
+                title: this.props.t('cardInfo.products'),
                 data: 3456
             },
             {
                 svg: '../static/svgs/mengb.svg',
-                title: cardInfo.customers,
+                title: this.props.t('cardInfo.customers'),
                 data: 3456
             },
             {
                 svg: '../static/svgs/throwup.svg',
-                title: cardInfo.transactions,
+                title: this.props.t('cardInfo.transactions'),
                 data: 3456
             }
         ];
@@ -74,4 +79,4 @@ class Home extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(Home);
+export default withNamespaces('home')(connect(mapStateToProps)(Home));

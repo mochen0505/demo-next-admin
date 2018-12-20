@@ -1,0 +1,14 @@
+{
+  "lngButtonText": "中文",
+  "navItem": {
+    "home": "Home",
+    "products": "Products",
+    "profile": "Profile",
+    "productDetails": "Product Details",
+    "faceRecognition": "Face Detection"
+  },
+  "userMenu": {
+    "profile": "Profile",
+    "signout": "Sign out"
+  }
+}
