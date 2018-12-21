@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e508dcc0-d38b-42be-a06b-94d0a6bd17f0" name="Default Changelist" comment="prettier">
-      <change afterPath="$PROJECT_DIR$/static/favicon/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+    <list default="true" id="e508dcc0-d38b-42be-a06b-94d0a6bd17f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/components/LayoutWithSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/LayoutWithSidebar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -71,22 +67,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Header.js">
+        <entry file="file://$PROJECT_DIR$/server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="189">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/index.js">
+        <entry file="file://$PROJECT_DIR$/components/LayoutWithSidebar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+            <state relative-caret-position="231">
+              <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -151,7 +144,6 @@
         <option value="$PROJECT_DIR$/components/LayoutWrapper.js" />
         <option value="$PROJECT_DIR$/static/locales/en-US/layout.json" />
         <option value="$PROJECT_DIR$/static/locales/zh-CN/layout.json" />
-        <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/next.config.js" />
         <option value="$PROJECT_DIR$/pages/_app.js" />
         <option value="$PROJECT_DIR$/locale/en_US.js" />
@@ -163,11 +155,12 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/static/locales/en_US/layout.json" />
         <option value="$PROJECT_DIR$/static/locales/zh_CN/layout.json" />
-        <option value="$PROJECT_DIR$/components/LayoutWithSidebar.js" />
         <option value="$PROJECT_DIR$/.prettierignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/components/Header.js" />
         <option value="$PROJECT_DIR$/pages/index.js" />
+        <option value="$PROJECT_DIR$/server/index.js" />
+        <option value="$PROJECT_DIR$/components/LayoutWithSidebar.js" />
       </list>
     </option>
   </component>
@@ -289,19 +282,19 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\node_modules\prettier" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin" />
-      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static\locales\zh_CN" />
-      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\assets" />
-      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static" />
-      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\redux\actions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static\svgs" />
       <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static\images" />
       <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\redux\constants" />
       <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\pages\products" />
       <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static\favicon" />
+      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin" />
+      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static\locales\zh_CN" />
+      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\assets" />
+      <recent name="C:\Users\moche\OneDrive\Documents\GitHub\Playgrounds\Web\demo-next-admin\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -349,7 +342,7 @@
       <workItem from="1545304698038" duration="3520000" />
       <workItem from="1545363040721" duration="33000" />
       <workItem from="1545363122437" duration="598000" />
-      <workItem from="1545365686377" duration="1571000" />
+      <workItem from="1545365686377" duration="3525000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1542267543696</created>
@@ -442,14 +435,22 @@
       <option name="project" value="LOCAL" />
       <updated>1545307440703</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="favicon">
+      <created>1545374107948</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1545374107948</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123812000" />
+    <option name="totallyTimeSpent" value="125766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24228188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -507,7 +508,8 @@
     <MESSAGE value="minor" />
     <MESSAGE value="ssr locale" />
     <MESSAGE value="prettier" />
-    <option name="LAST_COMMIT_MESSAGE" value="prettier" />
+    <MESSAGE value="favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="favicon" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/layoutNoSidebar.less">
@@ -659,13 +661,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/axios/lib/axios.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -742,16 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/LayoutWithSidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -803,10 +788,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/redux/selector/index.js">
+    <entry file="file://$PROJECT_DIR$/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="138">
+          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -820,10 +808,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.js">
+    <entry file="file://$PROJECT_DIR$/redux/selector/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        <state relative-caret-position="147">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/LayoutWithSidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

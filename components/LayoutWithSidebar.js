@@ -81,10 +81,10 @@ class LayoutWithSidebar extends React.Component {
               {navBar.map((item, index) => (
                 <Menu.Item key={item.name}>
                   <Link href={`${item.linkTo}`}>
-                    <div>
+                    <a>
                       <Icon type={item.icon} />
                       <span>{this.props.t(`navItem.${item.name}`)}</span>
-                    </div>
+                    </a>
                   </Link>
                 </Menu.Item>
               ))}
