@@ -31,11 +31,9 @@ demo-next-admin
 
 ### TODO
 
-- Prettier
 - eslint
 - Auth
 - Axios
 - ssr-caching
-- i18next
 - Immutable
 - Redux saga

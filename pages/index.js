@@ -19,22 +19,22 @@ class Home extends React.Component {
   render() {
     const dashCards = [
       {
-        svg: '../static/svgs/kiss.svg',
+        svg: '/static/svgs/kiss.svg',
         title: this.props.t('cardInfo.balance'),
         data: 3456
       },
       {
-        svg: '../static/svgs/tongueout.svg',
+        svg: '/static/svgs/tongueout.svg',
         title: this.props.t('cardInfo.products'),
         data: 3456
       },
       {
-        svg: '../static/svgs/mengb.svg',
+        svg: '/static/svgs/mengb.svg',
         title: this.props.t('cardInfo.customers'),
         data: 3456
       },
       {
-        svg: '../static/svgs/throwup.svg',
+        svg: '/static/svgs/throwup.svg',
         title: this.props.t('cardInfo.transactions'),
         data: 3456
       }
