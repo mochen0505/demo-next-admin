@@ -37,7 +37,7 @@ class LayoutWithSidebar extends React.Component {
   };
 
   handleClick = () => {
-    i18n.changeLanguage(i18n.language === 'en_US' ? 'zh_CN' : 'en_US');
+    i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en');
   };
 
   handleSignOut = () => {
