@@ -70,7 +70,9 @@ class LayoutWithSidebar extends React.Component {
             <Menu
               theme="dark"
               selectedKeys={navBar.map((item) => {
-                if (router.pathname === item.linkTo) {
+                if (
+                  router.pathname.split('/')[1] === item.linkTo.split('/')[1]
+                ) {
                   return item.name;
                 }
                 return null;
