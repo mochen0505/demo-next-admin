@@ -1,0 +1,21 @@
+{
+  "messages": {
+    "loginSuccess": "Logged in",
+    "loginFail": "Log in failed"
+  },
+  "loginIntro": {
+    "title": "Next Demo",
+    "details": "This is a Next.js template file"
+  },
+  "loginForm": {
+    "title": "Log in",
+    "emptyMobile": "Mobile can not be blank",
+    "errorMobile": "Bad Mobile",
+    "phMobile": "Please enter your mobile",
+    "emptyPassword": "Password can not be blank",
+    "errorPassword": "",
+    "phPassword": "Please enter your password",
+    "button": "Log in",
+    "signup": "Sign up"
+  }
+}

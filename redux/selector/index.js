@@ -1,14 +1,8 @@
 import { createSelector } from 'reselect';
 
-const getLocale = (state) => state.localeReducer.locale;
-const getLocaleMsgs = (state) => state.localeReducer.msgs;
+const getLoading = (state) => state.loadingReducer.isLoading;
 
-export const selectLocale = createSelector(
-  getLocale,
-  (locale) => locale
-);
-
-export const selectLocaleMsgs = createSelector(
-  getLocaleMsgs,
-  (msgs) => msgs
+export const selectLoading = createSelector(
+  getLoading,
+  (loading) => loading
 );

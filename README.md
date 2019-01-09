@@ -31,9 +31,9 @@ demo-next-admin
 
 ### TODO
 
-- eslint
-- Auth
-- Axios
+- Sign out & profile
+- \_document.js
+- Eslint
 - ssr-caching
 - Immutable
 - Redux saga

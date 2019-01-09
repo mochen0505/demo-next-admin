@@ -8,17 +8,37 @@ import LayoutWithSidebar from '../components/LayoutWithSidebar';
 import LayoutWithoutSidebar from '../components/LayoutWithoutSidebar';
 import Layout404 from '../components/Layout404';
 import { appWithTranslation } from '../i18n';
+import utils from '../libs/utils';
+import cookies from 'next-cookies';
 
 const configsNeedAuth = ['/', '/products', '/products/productDetails'];
 const configsNoAuth = ['/login', '/signup'];
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
-    return {
-      pageProps: Component.getInitialProps
-        ? await Component.getInitialProps(ctx)
-        : {}
-    };
+    let pageProps = {};
+    const c = cookies(ctx);
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    // if token is not found
+    if (typeof c.token === 'undefined' || c.token === '') {
+      // don't do anything if we are on a page that doesn't require credentials
+      if (ctx.pathname === '/login') {
+        return { pageProps };
+      } else {
+        utils.redirectTo('/login', { res: ctx.res, status: 301 });
+      }
+    } else {
+      if (ctx.pathname === '/login' || ctx.pathname === '/index') {
+        utils.redirectTo('/', { res: ctx.res, status: 301 });
+      } else {
+        return { pageProps };
+      }
+    }
+
+    return { pageProps };
   }
 
   componentDidCatch(error, errorInfo) {

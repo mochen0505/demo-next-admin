@@ -2,10 +2,10 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import api from '../api/api';
-import * as localeReducers from './reducers/localeReducer';
+import * as authReducer from './reducers/authReducer';
 
 const reducer = combineReducers({
-  ...localeReducers
+  ...authReducer
 });
 const middleware = [logger, thunk.withExtraArgument(api)];
 const enhancers = [applyMiddleware(...middleware)];

@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import { baseURL } from '../config/url';
 import { stringify } from 'qs';
+import utils from '../libs/utils';
 
 class httpRequest {
   constructor() {
@@ -23,9 +24,7 @@ class httpRequest {
     instance.interceptors.request.use(
       (config) => {
         if (!config.url.includes('users/signin')) {
-          config.headers[
-            'Authorization'
-          ] = `Bearer ${window.localStorage.getItem('token')}`;
+          config.headers['Authorization'] = `Bearer ${utils.getToken()}`;
         }
         // 在发送请求之前做些什么
         return config;
@@ -49,7 +48,7 @@ class httpRequest {
           if (data.code !== 1000) {
             // 权限错误
             if (data.code === 2000) {
-              window.localStorage.removeItem('token');
+              utils.setToken('');
               window.location.href = '/login';
             } else {
               // 其他业务错误

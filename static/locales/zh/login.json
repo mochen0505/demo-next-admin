@@ -1,0 +1,21 @@
+{
+  "messages": {
+    "loginSuccess": "登录成功",
+    "loginFail": "登录失败"
+  },
+  "loginIntro": {
+    "title": "Next Demo",
+    "details": "这是一个Next.js的模板文件"
+  },
+  "loginForm": {
+    "title": "登录",
+    "emptyMobile": "手机号码不能为空",
+    "errorMobile": "请输入正确的手机号码",
+    "phMobile": "请输入手机号码",
+    "emptyPassword": "密码不能为空",
+    "errorPassword": "",
+    "phPassword": "请输入密码",
+    "button": "登录",
+    "signup": "免费注册"
+  }
+}

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Row, Col, Card } from 'antd';
 import '../assets/index.less';
 import { withNamespaces } from '../i18n';
-import { Menu } from 'antd/lib/menu';
 
 const mapStateToProps = (state) => {
   return {};
