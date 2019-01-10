@@ -32,7 +32,7 @@ demo-next-admin
 ### TODO
 
 - IE compatibility
-- Sign out & profile
+- Profile
 - \_document.js
 - Eslint
 - ssr-caching

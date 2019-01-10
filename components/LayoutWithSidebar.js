@@ -1,9 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import Router from 'next/router';
 import { withRouter } from 'next/router';
 import HeaderM from './Header';
 import { connect } from 'react-redux';
 import { Layout, Menu, Icon, Dropdown, Breadcrumb, Button, Avatar } from 'antd';
+import { handleSignOut } from '../redux/actions/authAction';
+import utils from '../libs/utils';
 import '../assets/layoutSidebar.less';
 import { i18n, withNamespaces } from '../i18n';
 
@@ -12,7 +15,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    handleSignOut: () => dispatch(handleSignOut())
+  };
 };
 
 const { Header, Content, Sider, Footer } = Layout;
@@ -41,7 +46,19 @@ class LayoutWithSidebar extends React.Component {
   };
 
   handleSignOut = () => {
-    console.log('signed out');
+    this.props
+      .handleSignOut()
+      .then((res) => {
+        if (res === -1) {
+          utils.nMessage.error(this.props.t('userMenu.logoutFail'));
+        } else {
+          utils.nMessage.success(this.props.t('userMenu.logoutSuccess'));
+          Router.push('/login');
+        }
+      })
+      .catch((err) => {
+        utils.nMessage.error(this.props.t('userMenu.logoutFail'));
+      });
   };
 
   render() {
@@ -82,7 +99,7 @@ class LayoutWithSidebar extends React.Component {
             >
               {navBar.map((item, index) => (
                 <Menu.Item key={item.name}>
-                  <Link href={`${item.linkTo}`}>
+                  <Link href={`${item.linkTo}`} prefetch>
                     <a>
                       <Icon type={item.icon} />
                       <span>{this.props.t(`navItem.${item.name}`)}</span>

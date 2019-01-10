@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import { connect } from 'react-redux';
 import { Row, Col, Card, Form, Input, Icon, Button } from 'antd';
 import { selectLoading } from '../redux/selector/index';
@@ -39,7 +40,7 @@ class Login extends React.Component {
               utils.nMessage.error(this.props.t('messages.loginFail'));
             } else {
               utils.nMessage.success(this.props.t('messages.loginSuccess'));
-              window.location.href = '/';
+              Router.push('/');
             }
           })
           .catch((err) => {

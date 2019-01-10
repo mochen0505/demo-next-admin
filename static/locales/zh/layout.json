@@ -9,6 +9,8 @@
   },
   "userMenu": {
     "profile": "用户资料",
-    "signout": "退出"
+    "signout": "退出",
+    "logoutSuccess": "登出成功",
+    "logoutFail": "登出失败"
   }
 }

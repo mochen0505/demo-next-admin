@@ -16,11 +16,8 @@ const handleSignIn = (params) => {
         .then((res) => {
           const data = res.data;
           if (data && data.token) {
-            if (data.token) {
-              utils.setToken(data.token);
-            } else {
-              utils.setToken('');
-            }
+            // no need to dispatch an action
+            utils.setToken(data.token);
             resolve(data);
           } else {
             resolve(-1);
@@ -37,4 +34,29 @@ const handleSignIn = (params) => {
   };
 };
 
-export { handleSignIn };
+const handleSignOut = () => {
+  return (dispatch, getState, api) => {
+    utils.nProgress.start();
+    return new Promise((resolve, reject) => {
+      api
+        .signOut()
+        .then((res) => {
+          const data = res.data;
+          if (data) {
+            utils.setToken('');
+            resolve(data);
+          } else {
+            resolve(-1);
+          }
+        })
+        .catch((err) => {
+          reject(err);
+        })
+        .finally((res) => {
+          utils.nProgress.done();
+        });
+    });
+  };
+};
+
+export { handleSignIn, handleSignOut };

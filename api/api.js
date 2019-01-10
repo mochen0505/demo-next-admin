@@ -7,5 +7,11 @@ export default {
       data: params,
       method: 'post'
     });
+  },
+  signOut: () => {
+    return axios.request({
+      url: 'users/signout',
+      method: 'post'
+    });
   }
 };

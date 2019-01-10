@@ -9,6 +9,8 @@
   },
   "userMenu": {
     "profile": "Profile",
-    "signout": "Sign out"
+    "signout": "Sign out",
+    "logoutSuccess": "Logged out",
+    "logoutFail": "Log out failed"
   }
 }
