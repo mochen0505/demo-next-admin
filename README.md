@@ -31,10 +31,10 @@ demo-next-admin
 
 ### TODO
 
-- IE compatibility
 - Profile
-- \_document.js
+- IE compatibility
 - Eslint
 - ssr-caching
+- \_document.js
 - Immutable
 - Redux saga
