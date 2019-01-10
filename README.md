@@ -31,6 +31,7 @@ demo-next-admin
 
 ### TODO
 
+- IE compatibility
 - Sign out & profile
 - \_document.js
 - Eslint
