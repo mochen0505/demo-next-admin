@@ -11,7 +11,7 @@ export default (props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-        <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/static/favicon/favicon.png" />
       </Head>
     </div>
   );
