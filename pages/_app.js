@@ -49,6 +49,7 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, router, store } = this.props;
+    console.log(pageProps);
     return (
       <Container>
         <Provider store={store}>
