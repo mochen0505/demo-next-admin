@@ -9,10 +9,22 @@ import LayoutWithoutSidebar from '../components/LayoutWithoutSidebar';
 import Layout404 from '../components/Layout404';
 import { appWithTranslation } from '../i18n';
 import utils from '../libs/utils';
+import Router from 'next/router';
 import cookies from 'next-cookies';
 
-const configsNeedAuth = ['/', '/products', '/products/productDetails'];
+const configsNeedAuth = [
+  '/',
+  '/profile',
+  '/products',
+  '/products/productDetails'
+];
 const configsNoAuth = ['/login', '/signup'];
+
+Router.events.on('routeChangeStart', (url) => {
+  utils.nProgress.start();
+});
+Router.events.on('routeChangeComplete', () => utils.nProgress.done());
+Router.events.on('routeChangeError', () => utils.nProgress.done());
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

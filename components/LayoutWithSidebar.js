@@ -65,7 +65,9 @@ class LayoutWithSidebar extends React.Component {
     const { router } = this.props;
     const menu = (
       <Menu className="header_menu">
-        <Menu.Item key="0">{this.props.t('userMenu.profile')}</Menu.Item>
+        <Menu.Item key="0" onClick={() => Router.push('/profile')}>
+          {this.props.t('userMenu.profile')}
+        </Menu.Item>
         <Menu.Divider />
         <Menu.Item key="1" onClick={this.handleSignOut}>
           {this.props.t('userMenu.signout')}

@@ -4,8 +4,7 @@
     "home": "Home",
     "products": "Products",
     "profile": "Profile",
-    "productDetails": "Product Details",
-    "faceRecognition": "Face Detection"
+    "productDetails": "Product Details"
   },
   "userMenu": {
     "profile": "Profile",

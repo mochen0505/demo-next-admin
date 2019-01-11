@@ -35,6 +35,6 @@ demo-next-admin
 - IE compatibility
 - Eslint
 - ssr-caching
-- \_document.js
+- Styled components
 - Immutable
 - Redux saga
