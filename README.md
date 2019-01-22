@@ -34,7 +34,8 @@ demo-next-admin
 - Profile
 - IE compatibility
 - Eslint
-- ssr-caching
+- caching (sw/lru)
+- SEO Management (next-seo)
 - Styled components
 - Immutable
 - Redux saga

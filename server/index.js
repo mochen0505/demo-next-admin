@@ -15,6 +15,26 @@ app.prepare().then(() => {
 
   nextI18NextMiddleware(nextI18next, app, server);
 
+  server.get('/', (req, res) => {
+    return app.render(req, res, '/', req.query);
+  });
+
+  server.get('/login', (req, res) => {
+    return app.render(req, res, '/login', req.query);
+  });
+
+  server.get('/profile', (req, res) => {
+    return app.render(req, res, '/profile', req.query);
+  });
+
+  server.get('/products', (req, res) => {
+    return app.render(req, res, '/products', req.query);
+  });
+
+  server.get('/products/:id', (req, res) => {
+    return app.render(req, res, '/productDetails', { id: req.params.id });
+  });
+
   server.get('*', (req, res) => {
     return handle(req, res);
   });

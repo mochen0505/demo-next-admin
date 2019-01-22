@@ -12,13 +12,10 @@ import utils from '../libs/utils';
 import Router from 'next/router';
 import cookies from 'next-cookies';
 
-const configsNeedAuth = [
-  '/',
-  '/profile',
-  '/products',
-  '/products/productDetails'
-];
-const configsNoAuth = ['/login', '/signup'];
+// TODO: TOFIX. Temporally solve issue: https://github.com/zeit/next-plugins/issues/282
+
+const configsWithSider = ['/', '/profile', '/products', '/productDetails'];
+const configsNoSider = ['/login', '/signup'];
 
 Router.events.on('routeChangeStart', (url) => {
   utils.nProgress.start();
@@ -45,8 +42,6 @@ class MyApp extends App {
     } else {
       if (ctx.pathname === '/login') {
         utils.redirectTo('/', { res: ctx.res, status: 301 });
-      } else if (ctx.pathname === '/index') {
-        utils.redirectTo('/', { res: ctx.res, status: 301 });
       } else {
         return { pageProps };
       }
@@ -66,18 +61,18 @@ class MyApp extends App {
     return (
       <Container>
         <Provider store={store}>
-          {configsNeedAuth.includes(router.pathname) && (
+          {configsWithSider.includes(router.pathname) && (
             <LayoutWithSidebar>
               <Component {...pageProps} />
             </LayoutWithSidebar>
           )}
-          {configsNoAuth.includes(router.pathname) && (
+          {configsNoSider.includes(router.pathname) && (
             <LayoutWithoutSidebar>
               <Component {...pageProps} />
             </LayoutWithoutSidebar>
           )}
-          {!configsNeedAuth.includes(router.pathname) &&
-            !configsNoAuth.includes(router.pathname) && (
+          {!configsWithSider.includes(router.pathname) &&
+            !configsNoSider.includes(router.pathname) && (
               <Layout404>
                 <Component {...pageProps} />
               </Layout404>

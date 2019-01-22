@@ -15,6 +15,7 @@ if (typeof require !== 'undefined') {
 }
 
 module.exports = withLess({
+  useFileSystemPublicRoutes: false, // disable pages routing
   lessLoaderOptions: {
     javascriptEnabled: true,
     modifyVars: themeVariables // make your antd custom effective

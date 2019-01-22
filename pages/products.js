@@ -1,7 +1,14 @@
 import React from 'react';
 import { Card } from 'antd';
+import { withNamespaces } from '../i18n';
 
 class Products extends React.Component {
+  static async getInitialProps() {
+    return {
+      namespacesRequired: ['home', 'layout']
+    };
+  }
+
   render() {
     return (
       <Card bordered={false} className="products">
@@ -11,4 +18,4 @@ class Products extends React.Component {
   }
 }
 
-export default Products;
+export default withNamespaces('home')(Products);

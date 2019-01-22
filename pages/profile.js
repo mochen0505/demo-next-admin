@@ -5,7 +5,7 @@ class Profile extends React.Component {
   render() {
     return (
       <Card bordered={false} className="profile">
-        Products
+        Profile
       </Card>
     );
   }
