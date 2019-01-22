@@ -12,7 +12,7 @@ import utils from '../libs/utils';
 import Router from 'next/router';
 import cookies from 'next-cookies';
 
-// TODO: TOFIX. Temporally solve issue: https://github.com/zeit/next-plugins/issues/282
+// TODO: issue: https://github.com/zeit/next-plugins/issues/282
 
 const configsWithSider = ['/', '/profile', '/products', '/productDetails'];
 const configsNoSider = ['/login', '/signup'];
