@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card } from 'antd';
-import { withNamespaces } from '../i18n';
+import { withNamespaces } from '../../i18n';
 
-class Products extends React.Component {
+class Index extends React.Component {
   static async getInitialProps() {
     return {
       namespacesRequired: ['home', 'layout']
@@ -18,4 +18,4 @@ class Products extends React.Component {
   }
 }
 
-export default withNamespaces('home')(Products);
+export default withNamespaces('home')(Index);

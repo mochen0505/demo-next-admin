@@ -14,7 +14,12 @@ import cookies from 'next-cookies';
 
 // TODO: issue: https://github.com/zeit/next-plugins/issues/282
 
-const configsWithSider = ['/', '/profile', '/products', '/productDetails'];
+const configsWithSider = [
+  '/',
+  '/profile',
+  '/products',
+  '/products/productDetails'
+];
 const configsNoSider = ['/login', '/signup'];
 
 Router.events.on('routeChangeStart', (url) => {

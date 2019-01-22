@@ -32,7 +32,9 @@ app.prepare().then(() => {
   });
 
   server.get('/products/:id', (req, res) => {
-    return app.render(req, res, '/productDetails', { id: req.params.id });
+    return app.render(req, res, '/products/productDetails', {
+      id: req.params.id
+    });
   });
 
   server.get('*', (req, res) => {

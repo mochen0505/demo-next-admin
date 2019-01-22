@@ -1,5 +1,5 @@
 import React from 'react';
-import { withNamespaces } from '../i18n';
+import { withNamespaces } from '../../i18n';
 
 class ProductDetails extends React.Component {
   static getInitialProps({ query: { id } }) {
